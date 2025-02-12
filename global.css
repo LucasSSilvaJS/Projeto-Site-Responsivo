@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+.banner{
+    width: 100%;
+    height: 200px;
+    position: relative;
+    /* banner de fato */
+    background-image: url('./assets/img/banner.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    /* alinhar título */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner::after{
+    content: '';
+    position: absolute;
+    background-color: rgba(102, 120, 95, 0.6);
+    inset: 0;
+    z-index: 0;
+}
+
+.banner__content{
+    color: white;
+    z-index: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.content{
+    min-height: calc(100vh - 200px);
+    background-color: #2C3930;
+}
