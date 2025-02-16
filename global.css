@@ -7,6 +7,7 @@
     --black__color: #2c2c2c;
     --white__color: #e4ede4;
     --transparent__color: #ffffff73;
+    --transparent__color__black: #2c2c2ccf;
 }
 
 *{
@@ -104,7 +105,7 @@ a{
     transform: skewX(-12deg);
 }
 
-.btn{
+.btn, .btn__locations{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -165,6 +166,16 @@ footer{
 
 .landscape, .about{
     flex: 1 1 50%;
+}
+
+.btn__locations{
+    border: 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn__locations:hover{
+    background-color: var(--transparent__color__black);
 }
 
 @media screen and (max-width: 996px){
