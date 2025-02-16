@@ -1,47 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --title__font: "Finger Paint", serif;
+    --body__font: "Roboto Condensed", serif;
+    --green__color: #34eb34;
+    --black__color: #2c2c2c;
+    --white__color: #e4ede4;
+    --transparent__color: #ffffff73;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #FFF;
 }
 
 html, body{
     height: 100%;
 }
 
-.banner{
-    width: 100%;
-    height: 200px;
-    position: relative;
-    /* banner de fato */
-    background-image: url('./assets/img/banner.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    /* alinhar título */
+body{
+    background-color: rgb(21, 0, 255);
+    color: var(--white__color);
+    font-family: var(--body__font);
+}
+
+main{
+    min-height: calc(100vh - 51.33px);
+}
+
+a{
+    text-decoration: none;
+}
+
+.emphasis{
+    font-weight: bold;
+}
+
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 10px 2%;
+}
+
+.flex__space{
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex__gap{
+    display: flex;
+    gap: 12px;
+}
+
+.flex__center{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 12px;
 }
 
-.banner::after{
-    content: '';
-    position: absolute;
-    background-color: rgba(102, 120, 95, 0.6);
-    inset: 0;
-    z-index: 0;
+.title__font{
+    font-family: var(--title__font);
+    font-size: 1.2rem;
 }
 
-.banner__content{
-    color: white;
-    z-index: 1;
+.body__font{
+    font-family: var(--body__font);
+}
+
+.menu{
+    padding: 4px 8px;
+    border-radius: 15px;
+    border: 2px solid var(--white__color);
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.menu:hover{
+    background-color: var(--transparent__color);
+}
+
+.splash-art{
+    width: 400px;
+}
+
+.desc__goal{
+    max-width: 400px;
+    line-height: 1.5rem;
+    text-align: justify;
+    margin-bottom: 12px;
+}
+
+.desc__title{
+    padding: 8px 16px;
+    text-align: center;
+    background-color: var(--green__color);
+    color: var(--black__color);
+    margin-bottom: 12px;
+    transform: skewX(-12deg);
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: var(--black__color);
+}
+
+.section__location{
+    display: flex;
+    height: 300px;
+    margin-bottom: 16px;
+}
+
+.section__location > img{
+    object-fit: cover;
+    object-position: center;
+}
+
+.section__location > div{
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 4px;
+    text-shadow: 2px 2px 0 var(--black__color);
+    color: var(--black__color);
+    line-height: 2rem;
+    font-size: 1.2rem;
 }
 
-.content{
-    min-height: calc(100vh - 200px);
-    background-color: #2C3930;
+.section__location > img, .section__location > div{
+    flex: 1 1 50%;
+}
+
+.location__desc{
+    background-color: var(--transparent__color);
+}
+
+footer{
+    text-align: center;
+    padding: 16px;
+    background-color: var(--black__color);
+}
+
+.responsive-iframe {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    max-width: 764px;
+}
+
+.about__text{
+    line-height: 1.6rem;
+    margin: 12px 0;
+}
+
+.landscape, .about{
+    flex: 1 1 50%;
+}
+
+@media screen and (max-width: 996px){
+    section.desc div.flex__center{
+        flex-direction: column;
+    }
+
+    .desc__goal{
+        max-width: none;
+    }
+
+    .section__location{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .section__location:nth-of-type(2){
+        flex-direction: column-reverse;
+    }
+
+    section.desc, .splash-art{
+        padding: 0 2rem;
+    }
+    
+    .about{
+        padding: 0 2rem;
+    }
+
+    main.flex__center{
+        display: block;
+    }
 }
